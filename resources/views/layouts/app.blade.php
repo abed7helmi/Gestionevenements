@@ -12,9 +12,6 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/myjquery.js') }}" defer></script>
-
-    {{-- <script src="{{ asset('assets/img/bundles/datatablescripts.bundle.js') }}"></script>
-    <script src="{{ asset('assets/img/js/pages/tables/jquery-datatable.js') }}"></script> --}}
     
 
     <!-- Fonts -->
@@ -22,13 +19,22 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/mycss.css') }}" rel="stylesheet">
+    
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/img/css/helmicss.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/img/vendor/jquery-datatable/dataTables.bootstrap4.min.css') }}">
+    
+
+    
 
 
 
+    @if (Request::segment(1) === 'home' or Request::segment(0) === '')
+        <link rel="stylesheet" href="{{ asset('assets/css/weathercss.css') }}">
+    
+    @else
+        <link rel="stylesheet" href="{{ asset('assets/css/helmicss.css') }}">
+        
+    @endif
+    
     
 </head>
 <body>
@@ -42,7 +48,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button> --}}
 
-                <a class="navbar-brand" href="/"><img src="{{ asset('assets/img/logo.png')}}" width="130" height="50"></a>
+                <a class="navbar-brand" href="/home"><img src="{{ asset('assets/css/img/logo.png')}}" width="130" height="50"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>

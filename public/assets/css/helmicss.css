@@ -1,0 +1,34 @@
+
+
+h1{
+    text-align: center;
+    color: gray;
+}
+
+.divcss{
+    padding-top:1cm; 
+    padding-left: 1cm;
+}
+
+.padddinghelmi{
+    padding-top: 50px; 
+}
+
+span{
+    color: aqua;
+   
+}
+
+
+
+.div3{
+    padding-top: 60px;
+}
+
+#div1{
+    display:none;
+}
+#div2{
+    display:none;
+    
+}
