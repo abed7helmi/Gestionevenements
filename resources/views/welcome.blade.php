@@ -169,9 +169,9 @@
 
         <div class="images"></div>
 
-        <a  href="https://www.facebook.com/EPISEN.Paris/"><img src="{{ asset('assets/css/img/facebook.png')}}"></a>
-        <a  href="https://www.linkedin.com/school/episen-si/"><img src="{{ asset('assets/css/img/linkedin.png')}}" width="32%" height="32%" style="padding-left:80px;"></a>
-        <a  href="https://episen.u-pec.fr/"><img src="{{ asset('assets/css/img/browser2.ico')}}" width="50%" height="50%"></a>
+        <a  href="https://www.facebook.com/EPISEN.Paris/"><img src="{{ asset('assets/img/facebook.png')}}"></a>
+        <a  href="https://www.linkedin.com/school/episen-si/"><img src="{{ asset('assets/img/linkedin.png')}}" width="32%" height="32%" style="padding-left:80px;"></a>
+        <a  href="https://episen.u-pec.fr/"><img src="{{ asset('assets/img/browser2.ico')}}" width="50%" height="50%"></a>
     </div>
 
 </div>

@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Evenement extends Model
 {
-
-    public function Organisateur(){
-        return $this->belongsTo('App\User');
+    
+    public function organisateur(){
+        return $this->belongsTo(User::class,'Organisateur');
     }
 }

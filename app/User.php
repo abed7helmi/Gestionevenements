@@ -40,7 +40,7 @@ class User extends Authenticatable
 
 
     public function evenements(){
-        return $this->hasMany('App\Evenement'); 
+        return $this->hasMany(Evenement::class,'Organisateur'); 
     }
 
 }

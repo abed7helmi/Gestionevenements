@@ -9,14 +9,22 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
+
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/myjquery.js') }}" defer></script>
-    
 
-    <!-- Fonts -->
+
+
+    
+    @livewireStyles
+
+
+
+
+
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
 
     <!-- Styles -->
     
@@ -38,6 +46,7 @@
     
 </head>
 <body>
+    @livewireScripts
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
@@ -48,7 +57,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button> --}}
 
-                <a class="navbar-brand" href="/home"><img src="{{ asset('assets/css/img/logo.png')}}" width="130" height="50"></a>
+                <a class="navbar-brand" href="/home"><img src="{{ asset('assets/img/logo.png')}}" width="130" height="50"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>

@@ -40,3 +40,6 @@ Route::post('register"', function () {
 });
 
 Route::get('auto-complete-address', [AutoAddressController::class, 'googleAutoAddress']);
+
+
+
