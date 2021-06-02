@@ -23,7 +23,8 @@ class CreateEvenementsTable extends Migration
             $table->string('Salle')->nullable();
             $table->string('Type')->nullable();
             $table->integer('Nb_participants')->nullable();
-            $table->date('date_evenement')->nullable();
+            $table->integer('Nb_participants_R')->nullable();
+            $table->datetime('date_evenement')->nullable();
             $table->string('Commentaire')->nullable();
             $table->string('Adresse')->nullable();
             $table->string('Ville')->nullable();

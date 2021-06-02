@@ -12,9 +12,14 @@ use App\Evenement;
 class Datatablee extends Component
 {
 
+
+    public $sortBy = 'Nom_evenement';
+
+    public $sortDirection = 'desc';
+
     use WithPagination;
     public $perPage = 10;
-    public $search = '';
+    // public $search = '';
     protected $paginationTheme = 'bootstrap';
 
     public function render()
@@ -24,6 +29,7 @@ class Datatablee extends Component
         // ->orwhere('Nb_participants','like','%'.$this->search.'%')
         // ->orwhere('Adresse','like','%'.$this->search.'%')
         // ->orwhere('date_evenement','like','%'.$this->search.'%')
+        ->orderBy($this->sortBy, $this->sortDirection)
         ->paginate($this->perPage);;
         return view('livewire.datatablee',compact('evens'));
     }

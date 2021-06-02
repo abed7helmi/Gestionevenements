@@ -14,12 +14,6 @@
 <script type="text/javascript" src="/js/autocomplete.js"></script>
 
 
-@if (session()->has('messageeven'))
-<div class="message alert alert-danger" role="alert">
-    {{session()->get('messageenven')}}
-</div>
-    
-@endif
 
 
 <h1>Créer un nouveau evenement</h1>
@@ -145,7 +139,7 @@
         <label>Nombre de participants:</label>
         {{-- <label for="tentacles">Number of tentacles (10-100):</label> --}}
 
-        <input type="number" class="form-control" min="2" max="100" name="nb_participants" required>
+        <input type="number" class="form-control" min="1" max="100" name="nb_participants" required>
       </div>
 
 

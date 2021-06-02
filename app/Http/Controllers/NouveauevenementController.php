@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Evenement;
 use App\Http\Controllers\Auth;
 use App\User;
+use DateTime;
 
 class NouveauevenementController extends Controller
 {
@@ -43,6 +44,7 @@ class NouveauevenementController extends Controller
         $evenement->Ville=$request->locality;
         $evenement->Type=$request->Type_evenement;
         $evenement->Nb_participants=$request->nb_participants;
+        $evenement->Nb_participants_R=$request->nb_participants;
         $evenement->date_evenement=$request->date;
         $evenement->Commentaire=$request->commentaire;
         $evenement->Organisateur=$request->orga;
@@ -50,23 +52,36 @@ class NouveauevenementController extends Controller
         
         
        
+        
+        if(date("Y-m-d H:i:s")>=$evenement->date_evenement){
+
+            session()->flash('message',"Veuillez verifier la date");
 
 
-        if($request->exampleRadios=="red"){
-            $evenement->Emplacement="EPISEN" ;
-            $evenement->Adresse="EPISEN";
-            $evenement->save();
         }else{
-            if($request->user_input_autocomplete_address==""){
-                // dd("khra");
-                session()->flash('messageeven',"Veuillez saisir votre adresse d\'evenement");
 
-            }else{
-                $evenement->Emplacement="Dehors de l'EPISEN" ;
-                $evenement->Salle="";
+       
+
+            if($request->exampleRadios=="red"){
+                $evenement->Emplacement="EPISEN" ;
+                $evenement->Adresse="EPISEN";
+
+               
+                session()->flash('message1',"Evenement à l'ecole bien enregistré");
                 $evenement->save();
+            }else{
+                if($request->user_input_autocomplete_address==""){
+                    // dd("khra");
+                    session()->flash('message',"Veuillez saisir votre adresse");
+
+                }else{
+                    $evenement->Emplacement="Dehors de l'EPISEN" ;
+                    $evenement->Salle="";
+                    session()->flash('message1',"Evenement bien enregistré");
+                    $evenement->save();
+                }
+            
             }
-           
         }
 
         

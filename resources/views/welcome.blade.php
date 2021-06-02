@@ -3,18 +3,6 @@
 @section('content')
 
 
-{{-- type="text/javascript" --}}
-<!-- Include Google Maps JS API -->
-
-
-{{-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGsFtqWDkHH4JYmOui4b2vmnaSVL40OoI&libraries=places" async defer></script> --}}
-
-<!-- Custom JS code to bind to Autocomplete API -->
-
-
-
-
-
 <?php
     $url="http://api.openweathermap.org/data/2.5/weather?q=Creteil&lang=fr&units=metric&appid=938841d8050210a80d8073e5659518c0";
 
@@ -33,7 +21,7 @@
     $speed=$json->wind->speed;
     $deg=$json->wind->deg;
 
-    echo $weather." ".$desc;
+    // echo $weather." ".$desc;
 
 ?>
 

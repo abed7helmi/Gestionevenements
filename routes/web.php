@@ -21,14 +21,18 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/acceuil', 'AcceuilController@index')->name('acceuil');
+Route::get('/acceuil', 'AcceuilController@index')->middleware('auth')->name('acceuil');
 Route::get('/Nouveauevenement', 'NouveauevenementController@index')->middleware('auth')->name('Nouveauevenement');
 Route::get('/Mesevenements', 'MesevenementsController@index')->middleware('auth')->name('Mesevenements');
-Route::get('/MesParticipations', 'MesParticipationsController@index')->name('MesParticipations');
+Route::get('/MesParticipations', 'MesParticipationsController@index')->middleware('auth')->name('MesParticipations');
 
 //Evenement
 Route::post ('/evenements','NouveauevenementController@Post');
+Route::get('/detailevenement/{id}','EvenementController@detaileven')->middleware('auth')->name('clm.detaileven');
+Route::get('/deleteevenement/{id}','EvenementController@deleteeven')->middleware('auth')->name('clm.deleteeven');
 
+Route::get('/participevenement/{id}','EvenementController@participereven')->middleware('auth')->name('participer');
+Route::get('/annulepart/{id}','MesParticipationsController@annulerpart')->middleware('auth')->name('annulerpart');
 
 Route::get('home', function () {
     return view('welcome');

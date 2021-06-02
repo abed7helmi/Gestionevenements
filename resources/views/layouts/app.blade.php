@@ -123,6 +123,29 @@
         </nav>
 
         <main class="py-4">
+
+            {{-- <div class="alert alert-danger" role="alert">
+                This is a danger alert—check it out!
+              </div> --}}
+
+
+
+
+              @if (session()->has('message'))
+                <div class="alert alert-danger" role="alert">
+                    {{session()->get('message')}}
+                </div>
+                  
+              @endif
+
+              @if (session()->has('message1'))
+              <div class="alert alert-success" role="alert">
+                  {{session()->get('message1')}}
+              </div>
+                
+            @endif
+
+
             @yield('content')
         </main>
     </div>

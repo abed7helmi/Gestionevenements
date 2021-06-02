@@ -16,13 +16,14 @@ class Datatable extends Component
 
     public function render()
     {
-        $allevens=Evenement::with('Organisateur')
+        $allevens=Evenement::with('organisateur')
         // ->orderBy($this->sortBy, $this->sortDirection)
         ->where('Nom_evenement','like','%'.$this->search.'%')
         ->orwhere('Type','like','%'.$this->search.'%')
         ->orwhere('Nb_participants','like','%'.$this->search.'%')
         ->orwhere('Adresse','like','%'.$this->search.'%')
         ->orwhere('date_evenement','like','%'.$this->search.'%')
+        // ->where('Organisateur','!=',Auth::user()->id)
         
         ->paginate($this->perPage);
 
